@@ -1,3 +1,7 @@
+v7.7.0
+This is a test of a minor version bump
+This is a second change to test new line
+
 v7.6.6
 - Language update from Weblate
 
