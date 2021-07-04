@@ -1,3 +1,7 @@
+v7.8.0
+- Change 1
+- Change 2
+
 v7.7.1
 This is a test of a micro version bump
 This is a second change to test new line
