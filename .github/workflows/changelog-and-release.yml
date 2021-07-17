@@ -38,7 +38,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: anxdpanic/pvr-scripts
-          branch: dev
+          ref: dev
           path: scripts
 
       - name: Install dependencies
@@ -52,14 +52,14 @@ jobs:
 
       - name: Increment version and update changelogs
         run: |
-          arguments="${{ github.event.inputs.version_type }} ${{ github.event.inputs.changelog_text }}"
+          arguments=$(echo ${{ github.event.inputs.version_type }} && echo ${{ github.event.inputs.changelog_text }})
           if [[ ${{ github.event.inputs.update_news }} == true ]] ;
           then
-            arguments="$arguments --update-news"
+            arguments=$(echo $arguments && echo --update-news)
           fi
           if [[ ${{ github.event.inputs.add_date }} == true ]] ;
           then
-            arguments="$arguments --add-date"
+            arguments=$(echo $arguments && echo --add-date)
           fi
           python3 ../scripts/changelog_and_release.py $arguments
         working-directory: ${{ github.event.repository.name }}
