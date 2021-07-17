@@ -61,8 +61,6 @@ jobs:
           then
             arguments=$(echo $arguments && echo --add-date)
           fi
-          echo "Arguments:"
-          echo $arguments
           python3 ../scripts/changelog_and_release.py ${{ github.event.inputs.version_type }} ${{ github.event.inputs.changelog_text }} $arguments
         working-directory: ${{ github.event.repository.name }}
 
