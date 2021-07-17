@@ -1,3 +1,7 @@
+v7.10.2 (2021-07-17)
+Translations updates from Weblate
+	- en_us
+
 v7.10.1
 this is multiline
 second line
