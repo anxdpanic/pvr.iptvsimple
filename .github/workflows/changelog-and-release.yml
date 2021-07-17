@@ -52,7 +52,7 @@ jobs:
 
       - name: Increment version and update changelogs
         run: |
-          arguments=$(echo ${{ github.event.inputs.version_type }} && echo \"${{ github.event.inputs.changelog_text }}\")
+          arguments=
           if [[ ${{ github.event.inputs.update_news }} == true ]] ;
           then
             arguments=$(echo $arguments && echo --update-news)
@@ -61,6 +61,7 @@ jobs:
           then
             arguments=$(echo $arguments && echo --add-date)
           fi
+          arguments=$(echo ${{ github.event.inputs.version_type }} && echo ${{ github.event.inputs.changelog_text }} && $arguments)
           echo "Arguments:"
           echo $arguments
           python3 ../scripts/changelog_and_release.py $arguments
