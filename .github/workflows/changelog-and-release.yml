@@ -52,7 +52,7 @@ jobs:
 
       - name: Increment version and update changelogs
         run: |
-          arguments=$(echo ${{ github.event.inputs.version_type }} && echo ${{ github.event.inputs.changelog_text }})
+          arguments=$(echo ${{ github.event.inputs.version_type }} && echo \"${{ github.event.inputs.changelog_text }}\")
           if [[ ${{ github.event.inputs.update_news }} == true ]] ;
           then
             arguments=$(echo $arguments && echo --update-news)
