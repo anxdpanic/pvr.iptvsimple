@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="pvr.iptvsimple"
-  version="7.14.0"
+  version="7.15.0"
   name="PVR IPTV Simple Client"
   provider-name="nightik and Ross Nicholson">
   <requires>@ADDON_DEPENDS@
@@ -169,6 +169,10 @@
       <icon>icon.png</icon>
     </assets>
     <news>
+v7.15.0 (2021-07-17)
+testing 123
+testing 456
+
 v7.14.0 (2021-07-17)
 testing
 
