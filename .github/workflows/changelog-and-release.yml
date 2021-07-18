@@ -103,6 +103,12 @@ jobs:
         run: sleep 60s
         shell: bash
 
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          path: ${{ github.event.repository.name }}
+
       - name: Create Release
         id: create-release
         uses: actions/create-release@v1
